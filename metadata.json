@@ -1,0 +1,8 @@
+{
+  "name": "Thrive",
+  "description": "A tool that uses AI to generate complete, modern, and responsive web pages (HTML, CSS, and JavaScript) from a natural language description.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "prompt": ""
+}
