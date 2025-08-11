@@ -1,26 +1,76 @@
-# Thrive
+# Thrive – AI-Powered Web App Builder  
+🚀 Just Launched!
 
-This tool uses the Google Gemini API to generate complete, modern, and responsive web applications (HTML, CSS, and JavaScript) from a natural language description.
+Thrive empowers you to build complete, modern, and responsive web applications — just describe your idea and let the AI do the rest. Powered by the Google Gemini API, this tool delivers HTML, CSS, and JavaScript instantly — with no build step required!
 
-## Features
+📸 **Live Demo** → https://thrive-gem.vercel.app/  
+GitHub → https://github.com/amaansyed27/thrive  
 
-- **AI-Powered Code Generation**: Describe your web page idea, and the AI will generate the HTML, CSS, and JavaScript for you.
-- **Iterative Development**: Refine and modify your web page by simply asking the AI for changes in the chat interface.
-- **Live Preview**: See a live, interactive preview of your generated web page directly in the app.
-- **Code Editor**: View and browse all the generated files with syntax highlighting.
-- **File Uploads**: Provide images or other files as context for the AI.
-- **Download Project**: Download the complete, self-contained project as a ZIP file, ready to be deployed.
+---
 
-## How to Use
+##  Features  
+🤖 **AI-Powered Code Generation** – Turn plain English descriptions into full-stack web apps (HTML, CSS, JS).  
+🔄 **Iterative Development** – Ask for edits like “Add a contact form” or “Dark mode layout” in the chat.  
+🖥 **Live Preview** – Watch your webpage update instantly as you iterate.  
+📝 **Code Editor** – Browse and tweak the generated code with syntax highlighting.  
+📂 **File Uploads** – Supply images or assets to customize your app.  
+📦 **Download Project** – Export a self-contained ZIP file, ready to deploy.
 
-1.  **Describe Your Idea**: On the landing page, type a description of the web page you want to create. Be as descriptive as you like.
-2.  **Generate**: Click "Start Building". The AI will generate the initial version of your project.
-3.  **Iterate**: Use the chat prompt to ask for changes. For example, "Change the background color to dark grey" or "Add a contact form".
-4.  **Preview**: Switch to the "Preview" tab to see your changes in real-time. You can reload the preview if needed.
-5.  **Download**: Once you're happy with the result, click the "Download ZIP" button to get all the project files.
+---
 
-## Technology Stack
+##  Tech Stack  
+| Layer         | Technology                       |
+|---------------|----------------------------------|
+| Frontend      | React, TypeScript, Tailwind CSS  |
+| AI Backend    | Google Gemini API (`@google/genai`) |
+| Bundling      | Vite (no manual build required)  |
 
-- **Frontend**: React, TypeScript, Tailwind CSS
-- **AI Backend**: Google Gemini API (`@google/genai`)
-- **Bundling**: None! This project runs entirely in the browser without any build steps, using ES Modules.
+---
+
+##  Project Structure  
+thrive/
+
+├── components/ # UI components
+
+├── services/ # API services and utilities
+
+├── .gitignore # Files to ignore in Git
+
+├── App.tsx # Root React component
+
+├── constants.ts # App-wide constants
+
+├── index.html # HTML entry point
+
+├── index.tsx # React render entry
+
+├── LICENSE.md # Licensing info
+
+├── metadata.json # Project metadata
+
+├── package-lock.json # Dependency lock file
+
+├── package.json # Project dependencies & scripts
+
+├── README.md # Documentation (you’re here)
+
+├── tsconfig.json # TypeScript configuration
+
+├── types.ts # Custom TypeScript types
+
+└── vite.config.ts # Vite configuration
+
+---
+## 🙋‍♂️ Contribution Guidelines
+
+Want to improve Thrive? Feel free to fork and contribute!
+
+### To Contribute:
+1. Fork the repo  
+2. Create a new branch  
+   `git checkout -b feature-name`  
+3. Commit your changes  
+   `git commit -m 'Add new feature'`  
+4. Push to the branch  
+   `git push origin feature-name`  
+5. Open a Pull Request
