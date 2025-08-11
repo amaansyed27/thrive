@@ -34,19 +34,23 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartBuilding, isLoading })
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-full text-center p-4 overflow-hidden relative bg-gray-50 text-gray-800">
+    // MODIFY Line 35: Add dark theme background classes
+    <div className="flex flex-col items-center justify-center min-h-full text-center p-4 overflow-hidden relative bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300">
         <div className="absolute inset-0 w-full h-full overflow-hidden">
-            <div className="absolute w-96 h-96 bg-emerald-200/50 rounded-full -top-16 -left-16 animate-blob" style={{ animationDelay: '0s' }}></div>
-            <div className="absolute w-96 h-96 bg-teal-200/50 rounded-full -bottom-16 -right-16 animate-blob" style={{ animationDelay: '3s' }}></div>
-            <div className="absolute w-72 h-72 bg-sky-200/50 rounded-full -bottom-24 left-20 animate-blob" style={{ animationDelay: '6s' }}></div>
+            // MODIFY Line 37-39: Add dark theme blob colors with opacity
+            <div className="absolute w-96 h-96 bg-emerald-200/50 dark:bg-emerald-800/30 rounded-full -top-16 -left-16 animate-blob" style={{ animationDelay: '0s' }}></div>
+            <div className="absolute w-96 h-96 bg-teal-200/50 dark:bg-teal-800/30 rounded-full -bottom-16 -right-16 animate-blob" style={{ animationDelay: '3s' }}></div>
+            <div className="absolute w-72 h-72 bg-sky-200/50 dark:bg-sky-800/30 rounded-full -bottom-24 left-20 animate-blob" style={{ animationDelay: '6s' }}></div>
         </div>
         <div className="absolute inset-0 w-full h-full backdrop-blur-xl"></div>
 
         <main className="z-10 flex flex-col items-center justify-center">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-4 animate-fade-in-down">
+            // MODIFY Line 44: Add dark theme text colors
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4 animate-fade-in-down">
                 Where Ideas <span className="text-brand-primary">Thrive</span>
             </h1>
-            <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-600 mb-8 animate-fade-in-up">
+            // MODIFY Line 47: Add dark theme text colors
+            <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 animate-fade-in-up">
                 From a spark of an idea to a fully functional web application. Describe your vision, and watch it come to life.
             </p>
 
@@ -56,7 +60,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartBuilding, isLoading })
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
                     placeholder="e.g., A modern portfolio website with a dark mode toggle"
-                    className="w-full px-5 py-3 text-lg bg-white/80 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:outline-none transition-shadow duration-200 text-gray-900 placeholder-gray-500"
+                    // MODIFY Line 56: Add dark theme input styling
+                    className="w-full px-5 py-3 text-lg bg-white/80 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand-primary focus:outline-none transition-all duration-200 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                     disabled={isLoading}
                     aria-label="Project description"
                 />
@@ -84,13 +89,15 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartBuilding, isLoading })
             </form>
 
             <div className="flex flex-col items-center gap-3">
-                <p className="text-sm text-gray-500">Or try one of these examples:</p>
+                // MODIFY Line 81: Add dark theme text color
+                <p className="text-sm text-gray-500 dark:text-gray-400">Or try one of these examples:</p>
                 <div className="flex flex-wrap justify-center gap-2">
                     {examplePrompts.map((p) => (
                         <button
                             key={p}
                             onClick={() => handlePromptClick(p)}
-                            className="px-4 py-2 text-sm bg-white/60 backdrop-blur-sm border border-gray-300 rounded-full hover:bg-white hover:border-brand-primary hover:text-brand-primary transition-all duration-200 text-gray-600"
+                            // MODIFY Line 87: Add dark theme button styling
+                            className="px-4 py-2 text-sm bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-300 dark:border-gray-600 rounded-full hover:bg-white dark:hover:bg-gray-700 hover:border-brand-primary hover:text-brand-primary transition-all duration-200 text-gray-600 dark:text-gray-300"
                             disabled={isLoading}
                         >
                             {p}

@@ -3,10 +3,13 @@ import type { GeneratedCode, ChatMessage } from './types';
 import { startChat, sendMessage, parseCodeResponse } from './services/geminiService';
 import { ChatView } from './components/EditorView';
 import LandingPage from './components/LandingPage';
+// ADD: Import ThemeProvider
+import { ThemeProvider } from './components/ThemeContext';
 import JSZip from 'jszip';
 import confetti from 'canvas-confetti';
 
-const App: React.FC = () => {
+// ADD: AppContent component to wrap existing functionality
+const AppContent: React.FC = () => {
   const [isChatStarted, setIsChatStarted] = useState<boolean>(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [generatedCode, setGeneratedCode] = useState<GeneratedCode | null>(null);
@@ -145,7 +148,8 @@ const App: React.FC = () => {
   }, [generatedCode]);
 
   return (
-    <div className="h-full w-full bg-brand-background text-brand-text">
+    // MODIFY: Add dark theme classes and transition
+    <div className="h-full w-full bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-200">
        { !isChatStarted ? (
             <LandingPage onStartBuilding={handleStartBuilding} isLoading={isLoading} />
         ) : (
@@ -160,6 +164,15 @@ const App: React.FC = () => {
           />
         )}
     </div>
+  );
+};
+
+// MODIFY: Main App component now wraps with ThemeProvider
+const App: React.FC = () => {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 };
 
