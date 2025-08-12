@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@google/genai": "^1.11.0",
+    "@tabler/icons-react": "^3.34.1",
+    "canvas-confetti": "^1.9.3",
+    "jszip": "3.10.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-syntax-highlighter": "^15.6.1",
-    "jszip": "3.10.1",
-    "canvas-confetti": "^1.9.3"
+    "zustand": "^5.0.7"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
