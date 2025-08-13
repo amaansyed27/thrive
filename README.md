@@ -5,6 +5,7 @@ Thrive empowers you to build complete, modern, and responsive web applications �
 
 📸 **Live Demo** → https://thrive-gem.vercel.app/  
 GitHub → https://github.com/amaansyed27/thrive  
+Discord - https://discord.gg/pScgXrRu
 
 ---
 
@@ -29,35 +30,20 @@ GitHub → https://github.com/amaansyed27/thrive
 
 ##  Project Structure  
 thrive/
-
 ├── components/ # UI components
-
 ├── services/ # API services and utilities
-
 ├── .gitignore # Files to ignore in Git
-
 ├── App.tsx # Root React component
-
 ├── constants.ts # App-wide constants
-
 ├── index.html # HTML entry point
-
 ├── index.tsx # React render entry
-
 ├── LICENSE.md # Licensing info
-
 ├── metadata.json # Project metadata
-
 ├── package-lock.json # Dependency lock file
-
 ├── package.json # Project dependencies & scripts
-
 ├── README.md # Documentation (you’re here)
-
 ├── tsconfig.json # TypeScript configuration
-
 ├── types.ts # Custom TypeScript types
-
 └── vite.config.ts # Vite configuration
 
 ---
