@@ -33,6 +33,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
   isLoading,
 }) => {
   const [prompt, setPrompt] = useState("");
+  const [error, setError] = useState("");
 
   const handlePromptClick = (example: string) => {
     setPrompt(example);
@@ -40,6 +41,15 @@ const LandingPage: React.FC<LandingPageProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setError(""); // reset previous error
+
+    //Checking API key in localStorage
+    const apiKey = localStorage.getItem("geminiApiKey");
+    if (!apiKey) {
+      setError("Please set your Gemini API key in Settings before starting.");
+      return;
+    }
+
     if (prompt.trim() && !isLoading) {
       onStartBuilding(prompt);
     }
@@ -72,6 +82,12 @@ const LandingPage: React.FC<LandingPageProps> = ({
           From a spark of an idea to a fully functional web application.
           Describe your vision, and watch it come to life.
         </p>
+
+        {error && (
+          <div className="mb-3 text-sm text-red-600 bg-red-100 dark:bg-red-900/30 px-4 py-2 rounded">
+            {error}
+          </div>
+        )}
 
         <form
           onSubmit={handleSubmit}
