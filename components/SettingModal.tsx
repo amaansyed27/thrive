@@ -78,6 +78,19 @@ const SettingModal: React.FC<SettingModalProps> = ({ open, onClose }) => {
             </span>
           )}
         </div>
+        <div>
+            <label className="block text-sm font-medium mb-1 text-gray-500 dark:text-gray-300">
+            Get your Gemini API key from{" "}       {/*the {" "} adds space after 'from', as tsx ignores trailing text spaces */}
+            <a
+              href="https://aistudio.google.com/app/apikey"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-primary underline hover:text-emerald-600"
+            >
+              Google AI Studio
+            </a>
+            </label>
+        </div>
       </div>
     </div>
   );
