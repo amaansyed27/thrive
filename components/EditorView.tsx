@@ -7,7 +7,9 @@ const SendIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w
 const AttachmentIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" /></svg>);
 const NewChatIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>);
 const UserIcon = () => (<div className="h-8 w-8 rounded-full bg-teal-500 flex-shrink-0 flex items-center justify-center font-bold text-white text-sm">U</div>);
-const BotIcon = () => (<div className="h-8 w-8 rounded-full bg-gray-600 flex-shrink-0 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-300" viewBox="0 0 20 20" fill="currentColor"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 14.95a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414-1.414l-.707-.707zM15 11a1 1 0 100-2 1 1 0 000 2zM4.343 5.757a1 1 0 001.414-1.414l-.707-.707a1 1 0 10-1.414 1.414l.707.707zM2 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011 1z" /><path d="M10 4a6 6 0 100 12 6 6 0 000-12zM10 14a4 4 0 110-8 4 4 0 010 8z" /></svg></div>);
+const BotIcon = () => (
+    <img src="/images/thrive_symbol.png" alt="Thrive Symbol" className="h-8 w-8" />
+);
 const FileIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 flex-shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>);
 const FolderIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 flex-shrink-0 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg>);
 const DownloadIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>);
@@ -330,9 +332,8 @@ export const ChatView: React.FC<ChatViewProps> = ({ messages, onSendMessage, isL
     return (
         <div className="flex flex-col h-full w-full">
             <header className="flex-shrink-0 bg-brand-background border-b border-gray-700 flex justify-between items-center px-4 py-2">
-                 <div className="flex items-center space-x-2">
-                    <LeafIcon />
-                    <h1 className="text-xl font-bold text-brand-text">Thrive</h1>
+                 <div className="flex items-center">
+                    <img src="/images/thrive_logo.png" alt="Thrive Logo" className="h-12 w-32" />
                  </div>
                  <button onClick={onNewChat} disabled={isLoading} className="flex items-center px-3 py-2 text-sm bg-brand-surface hover:bg-brand-secondary text-brand-text rounded-md transition-colors disabled:opacity-50"><NewChatIcon />New Chat</button>
             </header>
