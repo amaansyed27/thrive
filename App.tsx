@@ -129,7 +129,7 @@ const App: React.FC = () => {
 
     const zip = new JSZip();
     Object.entries(generatedCode).forEach(([path, content]) => {
-      zip.file(path, content);
+      zip.file(path, content as string);
     });
 
     zip.generateAsync({ type: "blob" }).then((blob) => {
