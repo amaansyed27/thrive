@@ -56,7 +56,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-full text-center p-4 overflow-hidden relative">
+    <div className="flex flex-col items-center justify-center min-h-full text-center p-4 pt-20 overflow-hidden relative">
       <Header />
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <div

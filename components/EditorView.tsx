@@ -333,7 +333,7 @@ export const ChatView: React.FC<ChatViewProps> = ({ messages, onSendMessage, isL
         <div className="flex flex-col h-full w-full">
             <header className="flex-shrink-0 bg-brand-background border-b border-gray-700 flex justify-between items-center px-4 py-2">
                  <div className="flex items-center">
-                    <img src="/images/thrive_logo.png" alt="Thrive Logo" className="h-12 w-32" />
+                    <img src="/images/thrive_logo.png" alt="Thrive Logo" className="h-24 w-48" />
                  </div>
                  <button onClick={onNewChat} disabled={isLoading} className="flex items-center px-3 py-2 text-sm bg-brand-surface hover:bg-brand-secondary text-brand-text rounded-md transition-colors disabled:opacity-50"><NewChatIcon />New Chat</button>
             </header>
