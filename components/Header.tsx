@@ -56,29 +56,45 @@ const Header = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="w-full fixed top-0 left-0 z-50 flex justify-end p-4 gap-4">
-      <button
-        type="button"
-        className={`px-4 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center gap-2 ${
-          theme === "light" 
-            ? "text-green-500 bg-white border border-green-500 hover:bg-green-500 hover:text-white" 
-            : "text-green-400 bg-black border border-green-400 hover:bg-green-400 hover:text-black"
-        }`}
-        onClick={() => setModalOpen(true)}
-      >
-        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
-        </svg>
-        Enter Gemini API Key
-      </button>
-      <SettingModal open={modalOpen} onClose={() => setModalOpen(false)} />
-      <button
-        onClick={handleThemeChange}
-        aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-        className="text-gray-800 dark:text-gray-200"
-      >
-        {theme === "light" ? <MoonIcon /> : <SunIcon />}
-      </button>
+    <div className="w-full fixed top-0 left-0 z-50 flex justify-between items-center p-4 gap-4">
+      {/* Logo section */}
+      <div className="flex items-center">
+        <img 
+          src="/images/thrive_logo.png" 
+          alt="Thrive Logo" 
+          className="h-24 w-48"
+          onError={(e) => {
+            // Fallback to symbol if logo doesn't load
+            e.currentTarget.src = "/images/thrive_symbol.png";
+          }}
+        />
+      </div>
+      
+      {/* Right side buttons */}
+      <div className="flex items-center gap-4">
+        <button
+          type="button"
+          className={`px-4 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center gap-2 ${
+            theme === "light" 
+              ? "text-green-500 bg-white border border-green-500 hover:bg-green-500 hover:text-white" 
+              : "text-green-400 bg-black border border-green-400 hover:bg-green-400 hover:text-black"
+          }`}
+          onClick={() => setModalOpen(true)}
+        >
+          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+          </svg>
+          Enter Gemini API Key
+        </button>
+        <SettingModal open={modalOpen} onClose={() => setModalOpen(false)} />
+        <button
+          onClick={handleThemeChange}
+          aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+          className="text-gray-800 dark:text-gray-200"
+        >
+          {theme === "light" ? <MoonIcon /> : <SunIcon />}
+        </button>
+      </div>
     </div>
   );
 };
